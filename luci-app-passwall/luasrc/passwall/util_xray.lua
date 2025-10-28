@@ -1520,6 +1520,10 @@ function gen_config(var)
 				end
 			end
 		end
+-- >>> 落盘供 Xray 核心使用
+local f = io.open("/var/etc/pw-xray.json", "w")
+if f then f:write(jsonc.stringify(config, true)); f:close() end
+-- <<<
 		return jsonc.stringify(config, 1)
 	end
 end
